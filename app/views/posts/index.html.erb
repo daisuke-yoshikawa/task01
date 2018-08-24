@@ -1,0 +1,14 @@
+<div class = "index">
+<h1>みんなの川柳</h1>
+<p><%= notice %></p>
+</div>
+
+<table align="center">
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.content %></td>
+    <td><%= button_to "編集", edit_post_path(post.id),method: :get,class: "edit_button" %></td>
+    <td><%= button_to "削除", post_path(post.id), method: :delete,class: "delete_button" ,data: { confirm: '本当に削除していいですか？'} %></td>
+  </tr>
+<% end %>
+</table>

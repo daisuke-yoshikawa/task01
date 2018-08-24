@@ -1,0 +1,10 @@
+<h1>編集画面</h1>
+<%= form_with(model: @post, local:true, url: choose_new_or_edit) do |form| %>
+  <div class="post_title">
+    <%= form.label :"本文:" %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="post_submit">
+  <%= form.submit(["投稿する"]) %>
+  </div>
+ <% end %>

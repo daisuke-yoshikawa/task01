@@ -1,0 +1,21 @@
+<div class = "new">
+<h1>~新しい川柳はこちらから〜</h1>
+</div>
+<%= form_with(model: @post, local:true, url: choose_new_or_edit) do |form| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+
+  <div class="post_title">
+    <%= form.label :"本文:" %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="post_submit">
+  <%= form.submit("投稿する")%>
+  </div>
+ <% end %>
+ <div class = "new_picture">
+ <%= image_tag 'new_post.jpg' %>
+ </div>
